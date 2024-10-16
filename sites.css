@@ -1,0 +1,354 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding-top: 70px; 
+}
+
+/* Estilos do header e navegação */
+/* Estilos do header e navegação */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    background: #f4f4f4;
+    color: black;
+    padding: 0rem 0rem; /* Padding responsivo */
+    z-index: 1000; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem em linha */
+}
+
+.logo {
+    flex: 1; /* A logo ocupa o espaço necessário */
+    max-width: 150px; /* Define uma largura máxima para a logo */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex: 2; /* O ul ocupa mais espaço */
+    justify-content: flex-end; /* Alinha os itens à direita */
+}
+
+nav ul li {
+    margin-left: 1rem; /* Espaço entre os itens da lista */
+}
+
+nav ul li a {
+    color: black; 
+    text-decoration: none;
+    font-size: 1.0rem;
+}
+
+/* Media Queries para ajustes em telas menores */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem; /* Reduz o padding em telas menores */
+    }
+
+    nav {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        align-items: flex-start; /* Alinha os itens ao início */
+        width: 100%; /* Garantir que o nav ocupe toda a largura */
+    }
+
+    nav ul {
+        justify-content: flex-start; /* Alinha itens à esquerda */
+        margin-top: 0.5rem; /* Adiciona espaço acima da lista */
+        width: 100%; /* Faz a lista ocupar a largura total */
+        flex-direction: column; /* Os itens da lista ficam em coluna */
+    }
+
+    nav ul li {
+        margin-left: 0; /* Remove margens laterais em telas pequenas */
+        margin-bottom: 0.5rem; /* Adiciona espaço entre os itens da lista */
+    }
+
+    .logo img {
+        max-width: 100%; /* Garante que a logo não exceda a largura */
+        height: auto; /* Mantém a proporção da logo */
+    }
+}
+
+/* Banner principal */
+.banner {
+    background: url('logo/imagembiotipos.jpg') no-repeat center center/cover;
+    opacity: 0.8;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+}
+
+.banner h2 {
+    font-size: 2rem;
+}
+
+.banner .btn {
+    background: #f44336;
+    padding: 10px 20px;
+    color: rgb(70, 35, 230);
+    border: none;
+    cursor: pointer;
+    margin-left: 70px; 
+}
+
+/* Seção */
+.section {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Ajuste para exibir os cards em linha */
+.biotipo-card {
+    position: relative; 
+    background-image: url('img.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    z-index: 1;
+}
+
+.biotipo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px; 
+    z-index: -1; 
+}
+
+#biotipos p {
+    margin: 2rem 0; 
+}
+
+/* Estilos das listas */
+.card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Imagens dos cartões */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Estilos do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input, form select, form textarea {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 10px;
+    background: #f44336;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos gerais do Blog */
+#blog {
+    background-color: #f4f4f4; 
+    padding: 1.5rem 1rem;
+    text-align: left;
+    justify-content: center;
+    font-family: 'Georgia', serif; 
+    border-radius: 8px;
+}
+
+#blog h2 {
+    font-size: 2.8rem;
+    color: #333;
+    text-align: center; 
+    margin-bottom: 1.5rem;
+    font-family: 'Merriweather', serif; 
+}
+
+#blog h3 {
+    font-size: 2.2rem;
+    color: #444;
+    margin-bottom: 1rem;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+#blog p {
+    font-size: 1.2rem;
+    line-height: 1.8; 
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+#blog p::first-letter {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#blog a {
+    color: #f44336; 
+    text-decoration: underline;
+}
+
+#blog a:hover {
+    text-decoration: none;
+    color: #d32f2f; 
+}
+
+/* Ajuste para exibir os cards em linha */
+.biotipo-cards {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    margin: 0 auto; 
+    max-width: 1200px; 
+}
+
+/* Cartões de biotipos */
+.biotipo-cards .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    width: 100%; /* Mude para 100% e ajuste a largura nas media queries */
+    max-width: 300px; /* Máxima largura do card */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contêiner flex para alinhar os artigos */
+.biotipos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 1024px) {
+    .biotipos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .biotipo-card {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    /* Ajuste a largura dos cards */
+    .biotipo-cards .card {
+        width: 90%; /* Reduz a largura em telas menores */
+        margin: 0 auto; /* Centraliza os cards */
+    }
+
+    /* Ajuste o botão da banner */
+    .banner .btn {
+        margin-left: 0; /* Remove a margem em telas menores */
+    }
+}
+
+/* Cartões de endomorfos e ectomorfos */
+.card .endomorfo-container,
+.card .ecto-container {
+    width: 100%; 
+    height: 300px; 
+    overflow: hidden; 
+    margin-left: 0; /* Removido valor de margem à esquerda */
+}
+
+.card-cont {
+    background: #fff;
+    border: 1px solid #bdc3c7; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px; 
+    border-radius: 10px; 
+    text-align: left;
+    line-height: 1.6;
+    font-family: 'Georgia', serif; 
+    background-color: #f4f4f4; 
+}
+
+.card-cont h3 {
+    color: #34495e;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center; 
+}
+
+.card-cont p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.2rem;
+}
+
+.card-cont strong {
+    font-size: 1.2rem;
+    color: #e74c3c; 
+}
+
+/* Estilos adicionais para melhorar a responsividade */
+@media (max-width: 768px) {
+    /* Ajustes para telas menores */
+    header {
+        padding: 1rem 1rem; /* Aumenta o espaço em torno do header */
+    }
+
+    .biotipo-cards {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .banner h2 {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte */
+    }
+
+    .banner .btn {
+        margin-left: 0; /* Remove a margem em telas menores */
+        width: 100%; /* Botão ocupa a largura total */
+    }
+}
